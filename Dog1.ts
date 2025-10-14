@@ -17,11 +17,11 @@ class Dog1 extends Animal1 {
 }
 
 // --- Execution ---
-let myDog1 = new Dog1("Buddy", "Golden Retriever");
+const myDog1 = new Dog1('Buddy', 'Golden Retriever');
 
-myDog1.move(5); 
-console.log(myDog1.name); 
-myDog1.bark(); 
+myDog1.move(5);
+console.log(myDog1.name);
+myDog1.bark();
 
 // 🐛 FIX: Calling the move method with parentheses
 myDog1.move();

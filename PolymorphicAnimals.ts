@@ -7,7 +7,7 @@ class Dog extends Animal {
     private breed: string;
 
     constructor(name: string, breed: string) {
-        super(name, "Canine");
+        super(name, 'Canine');
         this.breed = breed;
     }
 
@@ -37,7 +37,7 @@ class Cat extends Animal {
     private indoor: boolean;
 
     constructor(name: string, indoor: boolean = true) {
-        super(name, "Feline");
+        super(name, 'Feline');
         this.indoor = indoor;
     }
 
@@ -71,7 +71,7 @@ class Cat extends Animal {
 class Bird extends Animal {
     private canFly: boolean;
 
-    constructor(name: string, species: string = "Avian", canFly: boolean = true) {
+    constructor(name: string, species: string = 'Avian', canFly: boolean = true) {
         super(name, species);
         this.canFly = canFly;
     }

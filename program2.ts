@@ -4,6 +4,6 @@ function add(a: number,b: number): number {
 
 }
 
-let result=add(100,200);
+const result=add(100,200);
 
-console.log("Sum of two numbers", result);
+console.log('Sum of two numbers', result);

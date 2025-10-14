@@ -7,30 +7,30 @@ import { Dog, Cat, Bird } from './PolymorphicAnimals';
 // but calls the specific implementation of each subclass
 function performAnimalActions(animal: Animal): void {
     console.log(`\n--- Working with ${animal.getName()} (${animal.getSpecies()}) ---`);
-    
+
     // These method calls will execute the specific implementation
     // of each subclass - this is POLYMORPHISM in action!
-    animal.makeSound();  // Different sound for each animal type
-    animal.move();       // Different movement for each animal type
-    animal.eat();        // Different eating behavior for each animal type
-    animal.sleep();      // Some override this, others use the default
+    animal.makeSound(); // Different sound for each animal type
+    animal.move(); // Different movement for each animal type
+    animal.eat(); // Different eating behavior for each animal type
+    animal.sleep(); // Some override this, others use the default
 }
 
 // Function to demonstrate polymorphism with an array of different animals
 function demonstratePolymorphicArray(): void {
-    console.log("\n" + "=".repeat(60));
-    console.log("🎭 POLYMORPHISM DEMONSTRATION WITH ARRAY");
-    console.log("=".repeat(60));
+    console.log('\n' + '='.repeat(60));
+    console.log('🎭 POLYMORPHISM DEMONSTRATION WITH ARRAY');
+    console.log('='.repeat(60));
 
     // Create an array of different animal types
     // All are stored as 'Animal' type, but maintain their specific behavior
     const animals: Animal[] = [
-        new Dog("Rex", "Golden Retriever"),
-        new Cat("Whiskers", true),
-        new Bird("Tweety", "Canary", true),
-        new Dog("Buddy", "German Shepherd"),
-        new Cat("Shadow", false),
-        new Bird("Penguin Pete", "Penguin", false)
+        new Dog('Rex', 'Golden Retriever'),
+        new Cat('Whiskers', true),
+        new Bird('Tweety', 'Canary', true),
+        new Dog('Buddy', 'German Shepherd'),
+        new Cat('Shadow', false),
+        new Bird('Penguin Pete', 'Penguin', false)
     ];
 
     // Iterate through the array and call the same methods
@@ -43,31 +43,31 @@ function demonstratePolymorphicArray(): void {
 
 // Function to demonstrate method overriding and specific behaviors
 function demonstrateSpecificBehaviors(): void {
-    console.log("\n" + "=".repeat(60));
-    console.log("🔧 SPECIFIC BEHAVIORS AND METHOD ACCESS");
-    console.log("=".repeat(60));
+    console.log('\n' + '='.repeat(60));
+    console.log('🔧 SPECIFIC BEHAVIORS AND METHOD ACCESS');
+    console.log('='.repeat(60));
 
-    const dog = new Dog("Max", "Labrador");
-    const cat = new Cat("Luna", true);
-    const bird = new Bird("Eagle", "Eagle", true);
+    const dog = new Dog('Max', 'Labrador');
+    const cat = new Cat('Luna', true);
+    const bird = new Bird('Eagle', 'Eagle', true);
 
     // Access specific methods that are unique to each class
-    console.log("\n--- Dog-specific behavior ---");
+    console.log('\n--- Dog-specific behavior ---');
     dog.fetch(); // Only dogs can fetch
 
-    console.log("\n--- Cat-specific behavior ---");
+    console.log('\n--- Cat-specific behavior ---');
     cat.climb(); // Only cats can climb (in our example)
 
-    console.log("\n--- Bird-specific behavior ---");
+    console.log('\n--- Bird-specific behavior ---');
     bird.buildNest(); // Only birds can build nests
 }
 
 // Function to explain polymorphism concepts
 function explainPolymorphism(): void {
-    console.log("\n" + "=".repeat(80));
-    console.log("📚 POLYMORPHISM EXPLANATION");
-    console.log("=".repeat(80));
-    
+    console.log('\n' + '='.repeat(80));
+    console.log('📚 POLYMORPHISM EXPLANATION');
+    console.log('='.repeat(80));
+
     console.log(`
 🎯 WHAT IS POLYMORPHISM?
 Polymorphism means "many forms". It allows objects of different types
@@ -106,20 +106,20 @@ their specific behaviors.
 
 // Main execution function
 function main(): void {
-    console.log("🚀 STARTING POLYMORPHISM DEMONSTRATION");
-    
+    console.log('🚀 STARTING POLYMORPHISM DEMONSTRATION');
+
     // Explain the concept first
     explainPolymorphism();
-    
+
     // Demonstrate polymorphism with array processing
     demonstratePolymorphicArray();
-    
+
     // Show specific behaviors and method overriding
     demonstrateSpecificBehaviors();
-    
-    console.log("\n" + "=".repeat(80));
-    console.log("✅ POLYMORPHISM DEMONSTRATION COMPLETE!");
-    console.log("=".repeat(80));
+
+    console.log('\n' + '='.repeat(80));
+    console.log('✅ POLYMORPHISM DEMONSTRATION COMPLETE!');
+    console.log('='.repeat(80));
 }
 
 // Execute the demonstration

@@ -1,0 +1,24 @@
+# Compiled output
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Generated files
+*.js
+*.js.map
+
+# Bundle files
+*.bundle
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

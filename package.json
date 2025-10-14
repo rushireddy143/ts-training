@@ -1,0 +1,34 @@
+{
+  "name": "ts-training",
+  "version": "1.0.0",
+  "description": "A comprehensive demonstration of **Polymorphism** in TypeScript, showcasing object-oriented programming concepts through an animal hierarchy example.",
+  "main": "Animal1.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/PolymorphismDemo.js",
+    "demo": "npm run build && npm run start",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "lint:check": "eslint . --ext .ts --max-warnings 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "polymorphism",
+    "oop",
+    "object-oriented",
+    "inheritance",
+    "eslint",
+    "demo"
+  ],
+  "author": "lrushikeswarreddy",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3"
+  }
+}

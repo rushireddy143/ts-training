@@ -14,7 +14,7 @@ class Dog extends Animal {
 
     constructor(name: string, breed: string) {
         // Call the parent class's constructor, MUST be the first statement
-        super(name); 
+        super(name);
         this.breed = breed;
     }
 
@@ -26,8 +26,8 @@ class Dog extends Animal {
 
 }
 
-let myDog = new Dog("Buddy", "Golden Retriever");
+const myDog = new Dog('Buddy', 'Golden Retriever');
 myDog.move();
 console.log(myDog.name); // Accesses inherited property
-myDog.bark();    
-console.log(myDog.move)        // Calls subclass-specific method
+myDog.bark();
+console.log(myDog.move); // Calls subclass-specific method

@@ -1,8 +1,8 @@
-let message: string="Hello ,Type Script";
+const message: string='Hello ,Type Script';
 
-let count:number=10;
+const count:number=10;
 
-let isActive:boolean=true;
+const isActive:boolean=true;
 
 console.log(message);
 
