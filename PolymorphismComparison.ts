@@ -305,7 +305,5 @@ function main(): void {
 // Export for use in other modules
 export { main as runPolymorphismComparison };
 
-// Execute if run directly
-if (require.main === module) {
-    main();
-}
+// Execute the demonstration
+main();

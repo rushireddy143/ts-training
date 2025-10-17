@@ -375,3 +375,6 @@ export function demonstrateRuntimePolymorphism(): void {
     console.log('- Runtime: Actual implementation is determined by object type');
     console.log('- Virtual table (vtable) lookup for method dispatch');
 }
+
+// Execute the demonstration
+demonstrateRuntimePolymorphism();

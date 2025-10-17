@@ -65,7 +65,7 @@ class Calculator {
         
         if (Array.isArray(a) && Array.isArray(a[0]) && typeof b === 'number') {
             console.log(`🧮 Multiplying matrix by scalar: ${b}`);
-            return a.map(row => row.map(cell => cell * b));
+            return a.map(row => row.map((cell: number) => cell * b));
         }
         
         throw new Error('Unsupported parameter types');
@@ -268,3 +268,6 @@ export function demonstrateCompileTimePolymorphism(): void {
     console.log('- Early error detection');
     console.log('- Optimized generated code');
 }
+
+// Execute the demonstration
+demonstrateCompileTimePolymorphism();
