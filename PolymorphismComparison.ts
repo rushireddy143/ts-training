@@ -5,7 +5,7 @@ import { demonstrateRuntimePolymorphism } from './RuntimePolymorphism';
 
 /**
  * POLYMORPHISM COMPARISON PROGRAM
- * 
+ *
  * This program demonstrates and compares:
  * 1. Compile-Time Polymorphism (Static/Early Binding)
  * 2. Runtime Polymorphism (Dynamic/Late Binding)
@@ -20,27 +20,32 @@ class DataProcessor<T> {
     private items: T[] = [];
 
     // COMPILE-TIME POLYMORPHISM: Method overloading
+    // eslint-disable-next-line no-dupe-class-members
     process(data: string): string;
+    // eslint-disable-next-line no-dupe-class-members
     process(data: number): number;
+    // eslint-disable-next-line no-dupe-class-members
     process(data: boolean): number;
+    // eslint-disable-next-line no-dupe-class-members
     process(data: T[]): T[];
-    
+
+    // eslint-disable-next-line no-dupe-class-members, @typescript-eslint/no-explicit-any
     process(data: any): any {
         if (typeof data === 'string') {
             console.log(`📝 [COMPILE-TIME] Processing string: "${data}"`);
             return data.toUpperCase();
         }
-        
+
         if (typeof data === 'number') {
             console.log(`🔢 [COMPILE-TIME] Processing number: ${data}`);
             return data * 2;
         }
-        
+
         if (typeof data === 'boolean') {
             console.log(`✅ [COMPILE-TIME] Processing boolean: ${data}`);
             return data ? 1 : 0;
         }
-        
+
         if (Array.isArray(data)) {
             console.log(`📋 [COMPILE-TIME] Processing array of length: ${data.length}`);
             this.items = [...data];
@@ -166,12 +171,12 @@ class QuickSorter<T> implements ISorter<T> {
 
     sort(array: T[]): T[] {
         if (array.length <= 1) return array;
-        
+
         const pivot = array[Math.floor(array.length / 2)];
         const left = array.filter(x => this.comparer(x, pivot) < 0);
         const middle = array.filter(x => this.comparer(x, pivot) === 0);
         const right = array.filter(x => this.comparer(x, pivot) > 0);
-        
+
         return [...this.sort(left), ...middle, ...this.sort(right)];
     }
 }
@@ -184,49 +189,49 @@ function demonstrateComparisonExamples(): void {
     console.log('\n' + '='.repeat(80));
     console.log('⚖️ COMPILE-TIME vs RUNTIME POLYMORPHISM COMPARISON');
     console.log('='.repeat(80));
-    
+
     console.log('\n📊 1. DATA PROCESSING EXAMPLE');
     console.log('-'.repeat(50));
-    
+
     // Compile-time polymorphism example
     const stringProcessor = new DataProcessor<string>();
     const numberProcessor = new DataProcessor<number>();
-    
+
     // Method overloading (resolved at compile time)
     console.log('Result:', stringProcessor.process('hello world'));
     console.log('Result:', numberProcessor.process(42));
     console.log('Result:', stringProcessor.process(['apple', 'banana', 'cherry']));
-    
+
     // Runtime polymorphism example
     const upperProcessor = new UpperCaseProcessor();
     const reverseProcessor = new ReverseProcessor();
     const doubleProcessor = new DoubleProcessor();
     const squareProcessor = new SquareProcessor();
-    
+
     console.log('\nString results:', stringProcessor.processWithStrategy(upperProcessor));
     console.log('String results:', stringProcessor.processWithStrategy(reverseProcessor));
-    
+
     numberProcessor.process([1, 2, 3, 4, 5]);
     console.log('Number results:', numberProcessor.processWithStrategy(doubleProcessor));
     console.log('Number results:', numberProcessor.processWithStrategy(squareProcessor));
-    
+
     console.log('\n🚀 2. PERFORMANCE COMPARISON');
     console.log('-'.repeat(50));
-    
+
     const testArray = [64, 34, 25, 12, 22, 11, 90];
     const comparer = (a: number, b: number): number => a - b;
-    
+
     // Compile-time generic sort
     const compileResult = PerformanceComparison.compileTimeSort(testArray, comparer);
     console.log('   Result:', compileResult);
-    
+
     // Runtime polymorphic sorts
     const bubbleSorter = new BubbleSorter(comparer);
     const quickSorter = new QuickSorter(comparer);
-    
+
     const runtimeResult1 = PerformanceComparison.runtimeSort(testArray, bubbleSorter);
     console.log('   Result:', runtimeResult1);
-    
+
     const runtimeResult2 = PerformanceComparison.runtimeSort(testArray, quickSorter);
     console.log('   Result:', runtimeResult2);
 }
@@ -235,7 +240,7 @@ function displayComparisonTable(): void {
     console.log('\n' + '='.repeat(80));
     console.log('📋 COMPILE-TIME vs RUNTIME POLYMORPHISM COMPARISON TABLE');
     console.log('='.repeat(80));
-    
+
     const table = `
 ╔══════════════════════════╤══════════════════════════╤══════════════════════════╗
 ║         ASPECT           │    COMPILE-TIME          │       RUNTIME            ║
@@ -252,9 +257,9 @@ function displayComparisonTable(): void {
 ║ Use Cases                │ Algorithms, Utilities    │ Frameworks, Plugins      ║
 ╚══════════════════════════╧══════════════════════════╧══════════════════════════╝
     `;
-    
+
     console.log(table);
-    
+
     console.log('\n🎯 WHEN TO USE EACH:');
     console.log('-'.repeat(50));
     console.log('📊 COMPILE-TIME POLYMORPHISM:');
@@ -263,7 +268,7 @@ function displayComparisonTable(): void {
     console.log('  ✅ Type-safe generic containers');
     console.log('  ✅ Compile-time optimizations needed');
     console.log('  ✅ Template-heavy libraries');
-    
+
     console.log('\n🎭 RUNTIME POLYMORPHISM:');
     console.log('  ✅ Plugin architectures');
     console.log('  ✅ Framework development');
@@ -279,24 +284,24 @@ function displayComparisonTable(): void {
 function main(): void {
     console.log('🚀 COMPREHENSIVE POLYMORPHISM DEMONSTRATION PROGRAM');
     console.log('═'.repeat(80));
-    
+
     try {
         // Run compile-time polymorphism demo
         demonstrateCompileTimePolymorphism();
-        
-        // Run runtime polymorphism demo  
+
+        // Run runtime polymorphism demo
         demonstrateRuntimePolymorphism();
-        
+
         // Run comparison examples
         demonstrateComparisonExamples();
-        
+
         // Display comparison table
         displayComparisonTable();
-        
+
         console.log('\n' + '═'.repeat(80));
         console.log('✅ ALL POLYMORPHISM DEMONSTRATIONS COMPLETED SUCCESSFULLY!');
         console.log('═'.repeat(80));
-        
+
     } catch (error) {
         console.error('❌ Error during demonstration:', error);
     }

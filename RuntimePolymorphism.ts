@@ -2,7 +2,7 @@
 
 /**
  * RUNTIME POLYMORPHISM
- * 
+ *
  * Also known as Dynamic Polymorphism or Late Binding
  * - Method resolution happens at runtime based on actual object type
  * - Includes: Inheritance, Method Overriding, Interface Implementation
@@ -257,9 +257,9 @@ class Triangle extends Shape {
 class PolymorphismDemo {
     // Method that works with any Vehicle (runtime polymorphism)
     static testVehicle(vehicle: Vehicle): void {
-        console.log(`\n🧪 Testing vehicle polymorphically:`);
+        console.log('\n🧪 Testing vehicle polymorphically:');
         vehicle.displayFullInfo();
-        
+
         // Runtime type checking for specific behaviors
         if (vehicle instanceof Car) {
             console.log(`   Extra: ${vehicle.openTrunk()}`);
@@ -272,11 +272,11 @@ class PolymorphismDemo {
 
     // Method that works with any Drawable object
     static renderShape(shape: Drawable): void {
-        console.log(`\n🎨 Rendering shape:`);
+        console.log('\n🎨 Rendering shape:');
         console.log(`   ${shape.draw()}`);
         console.log(`   Area: ${shape.getArea().toFixed(2)}`);
         console.log(`   Perimeter: ${shape.getPerimeter().toFixed(2)}`);
-        
+
         if (shape instanceof Shape) {
             console.log(`   Color: ${shape.getColor()}`);
         }
@@ -286,7 +286,7 @@ class PolymorphismDemo {
     static processVehicles(vehicles: Vehicle[]): void {
         console.log('\n🚗 Processing vehicle fleet:');
         console.log('-'.repeat(50));
-        
+
         vehicles.forEach((vehicle, index) => {
             console.log(`\n[${index + 1}] ${vehicle.getInfo()}`);
             console.log(`    Start method: ${vehicle.start()}`);
@@ -299,7 +299,7 @@ class PolymorphismDemo {
     static drawShapes(shapes: Drawable[]): void {
         console.log('\n🎨 Drawing shapes collection:');
         console.log('-'.repeat(50));
-        
+
         shapes.forEach((shape, index) => {
             console.log(`\n[${index + 1}] ${shape.draw()}`);
             console.log(`    Area: ${shape.getArea().toFixed(2)} sq units`);
@@ -316,10 +316,10 @@ export function demonstrateRuntimePolymorphism(): void {
     console.log('\n' + '='.repeat(80));
     console.log('🎭 RUNTIME POLYMORPHISM DEMONSTRATION');
     console.log('='.repeat(80));
-    
+
     console.log('\n🚗 1. INHERITANCE-BASED POLYMORPHISM');
     console.log('-'.repeat(50));
-    
+
     // Create different vehicle types
     const vehicles: Vehicle[] = [
         new Car('Toyota', 'Camry', 2023, 4),
@@ -328,25 +328,25 @@ export function demonstrateRuntimePolymorphism(): void {
         new Car('BMW', 'X5', 2023, 4),
         new Motorcycle('Yamaha', 'R1', 2023, 1000)
     ];
-    
+
     // Test individual vehicles (runtime method resolution)
     vehicles.forEach(vehicle => {
         PolymorphismDemo.testVehicle(vehicle);
     });
-    
+
     // Process all vehicles polymorphically
     PolymorphismDemo.processVehicles(vehicles);
-    
+
     console.log('\n🎨 2. INTERFACE-BASED POLYMORPHISM');
     console.log('-'.repeat(50));
-    
+
     // Create different shapes
     const shapes: Drawable[] = [
         new Rectangle(10, 5),
         new Circle(7),
         new Triangle(3, 4, 5)
     ];
-    
+
     // Set colors (if the shape supports it)
     shapes.forEach((shape, index) => {
         if (shape instanceof Shape) {
@@ -354,22 +354,22 @@ export function demonstrateRuntimePolymorphism(): void {
             shape.setColor(colors[index]);
         }
     });
-    
+
     // Render shapes polymorphically
     shapes.forEach(shape => {
         PolymorphismDemo.renderShape(shape);
     });
-    
+
     // Draw all shapes in collection
     PolymorphismDemo.drawShapes(shapes);
-    
+
     console.log('\n✨ RUNTIME POLYMORPHISM BENEFITS:');
     console.log('- Dynamic method dispatch based on actual object type');
     console.log('- Code flexibility and extensibility');
     console.log('- Uniform interface for different implementations');
     console.log('- Support for plugin architectures');
     console.log('- Late binding enables runtime decision making');
-    
+
     console.log('\n🔄 METHOD RESOLUTION:');
     console.log('- Compile time: Method signatures are checked');
     console.log('- Runtime: Actual implementation is determined by object type');

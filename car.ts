@@ -34,6 +34,7 @@ car1.displayInfo(); // Output: Brand: VW, Model: Taigun
 
 // 2. Works with both brand and model (as intended by original car2)
 const car2 = new Car('Skoda', 'Superb');
+
 car2.displayInfo(); // Output: Brand: Skoda, Model: Superb
 
 // 3. Works with both brand and model (as intended by original car3)

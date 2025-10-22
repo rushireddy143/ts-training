@@ -1,15 +1,15 @@
 class ControlStatements {
     public executeSwitch(): void {
-        let day: number = 4;
+        const day: number = 4;
 
         switch (day) {
-            default: console.log("Other Day");
+        default: console.log('Other Day');
             break;
-            case 1: console.log("Monday");
+        case 1: console.log('Monday');
             break;
-            case 2: console.log("Tuesday"); 
+        case 2: console.log('Tuesday');
             break;
-           
+
         }
     }
 }

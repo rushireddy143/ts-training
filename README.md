@@ -1,6 +1,6 @@
-# TypeScript Polymorphism Demo 🎭
+# TypeScript Learning Repository 🎭
 
-A comprehensive demonstration of **Polymorphism** in TypeScript, showcasing object-oriented programming concepts through an animal hierarchy example.
+A comprehensive collection of **TypeScript** programs demonstrating object-oriented programming concepts, operators, and control structures.
 
 ## 📁 Project Structure
 
@@ -9,43 +9,86 @@ ts-training/
 ├── AnimalPolymorphism.ts     # Abstract base Animal class
 ├── PolymorphicAnimals.ts     # Concrete animal implementations (Dog, Cat, Bird)
 ├── PolymorphismDemo.ts       # Main demonstration program
+├── CompileTimePolymorphism.ts # Compile-time polymorphism examples
+├── RuntimePolymorphism.ts    # Runtime polymorphism examples
+├── PolymorphismComparison.ts # Comparison of both types
+├── TernaryOperator.ts        # Ternary operator demonstrations
+├── LogicalAndOperator.ts     # Logical AND operator examples
+├── Loops.ts                  # Loop demonstrations
+├── ControlStatments.ts       # Control statement examples
 ├── Dog1.ts                   # Simple inheritance example
 ├── Animal1.ts                # Base class for Dog1 example
 ├── tsconfig.json             # TypeScript configuration
+├── package.json              # Node.js project configuration
+├── OPERATORS_DOCUMENTATION.md # Detailed operators documentation
+├── README_OPERATORS.md       # Quick operators reference
 └── README.md                 # This file
 ```
 
-## 🎯 What is Polymorphism?
+## 🎯 What This Repository Covers
 
-**Polymorphism** means "many forms" - it allows objects of different types to be treated as instances of the same base type, while maintaining their specific behaviors.
+This repository demonstrates multiple TypeScript concepts:
+
+### **🎭 Polymorphism** 
+Objects of different types treated as instances of the same base type while maintaining specific behaviors.
+
+### **� Operators**
+Ternary operator (?:) and Logical AND (&&) operator demonstrations with practical examples.
+
+### **🔄 Control Structures**
+Loops, switch statements, and conditional logic examples.
 
 ## 🔑 Key Concepts Demonstrated
 
-### 1. Abstract Base Class
-- Defines common interface (`makeSound`, `move`, `eat`)
-- Forces subclasses to implement specific behaviors
-- Provides shared properties (`name`, `species`)
+### 1. Polymorphism Types
+- **Compile-time**: Method overloading, generics, conditional types
+- **Runtime**: Inheritance, method overriding, dynamic dispatch
 
-### 2. Method Overriding
-- **Dog**: "Woof! Woof!" + runs on four legs
-- **Cat**: "Meow! Purr..." + graceful stalking  
-- **Bird**: "Tweet! Chirp!" + soars through sky
+### 2. Operator Usage
+- **Ternary Operator**: Conditional expressions, nested conditions
+- **Logical AND**: Short-circuit evaluation, safe navigation, conditional execution
 
-### 3. Uniform Treatment
-- Array of `Animal[]` can hold Dogs, Cats, Birds
-- Same method calls work on all objects
-- Runtime determines which implementation to use
+### 3. Control Flow
+- **Loops**: for, while loop implementations in classes
+- **Conditionals**: switch statements, if-else logic
 
-## 🚀 Running the Demo
+### 4. Object-Oriented Programming
+- Abstract classes and inheritance
+- Method overriding and polymorphic behavior
+- Encapsulation in class structures
+
+## 🚀 Running the Programs
 
 1. **Compile TypeScript:**
    ```bash
    tsc
    ```
 
-2. **Run the demonstration:**
+2. **Run specific demonstrations:**
    ```bash
+   # Polymorphism demos
    node dist/PolymorphismDemo.js
+   node dist/CompileTimePolymorphism.js
+   node dist/RuntimePolymorphism.js
+   node dist/PolymorphismComparison.js
+   
+   # Operator demos
+   node dist/TernaryOperator.js
+   node dist/LogicalAndOperator.js
+   
+   # Control structure demos
+   node dist/Loops.js
+   node dist/ControlStatments.js
+   
+   # Simple inheritance example
+   node dist/Dog1.js
+   ```
+
+3. **Use npm scripts:**
+   ```bash
+   npm run build    # Compile TypeScript
+   npm run demo     # Build and run main polymorphism demo
+   npm run lint     # Run ESLint
    ```
 
 3. **Run the simple inheritance example:**
